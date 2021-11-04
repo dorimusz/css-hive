@@ -1,0 +1,102 @@
+* {margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    
+    background: transparent;
+  
+    font-family: inherit;
+    text-decoration: none; 
+  }
+
+ol, ul, li {
+    display: block;
+    list-style: none;
+  }
+  
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+a img {
+    border: none;
+  }
+  
+button, a {
+    color: inherit;
+    cursor: pointer;
+  }
+  
+textarea {
+    resize: none;
+  }
+  
+button, input, textarea, select {
+    appearance: none !important;
+    -webkit-appearance: none !important; 
+    border-radius: 0;
+  }
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background-color: #5cdb94;
+    
+}
+
+section {
+    min-height: 100vh;
+    background-image: radial-gradient(circle, rgba(5,57,107,1) 0%, rgba(55,150,131,1) 35%, rgba(92,219,148,1) 100%);
+}
+
+@keyframes welcomeAnimation {
+    0% {background-color: #5cdb94; transform: rotate(0) scale(1);}
+    50% {background-color: #05396b; transform: rotate(180deg) scale(0.1);}
+    100% {background-color: #5cdb94; transform: rotate(360deg) scale(1);}
+}
+
+section#welcome {
+    position: relative; /*méretek pinelése*/
+    width: calc(100vh - 160px);
+    height: calc(100vh - 160px);
+    min-height: unset;
+    margin: 80px auto;
+
+    background-color: #5cdb94;
+    box-shadow: 0 0 20px #05396b;
+    border-radius: 10px;
+
+    animation-name: welcomeAnimation;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+  
+section#welcome button {
+      position: absolute;
+      top: 50%; /*az adott elem parentjétől számolódik. A marginnál és a top-left-right-bottom a parent elemtől számolódik. ÖKÖLSZABÁLY*/
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      
+      border: 4px solid #379683;
+      border-radius: 50%;
+      background-color: #05396b;
+      
+      font-weight: 800;
+      color: #5cdb94;
+      text-transform: uppercase;
+      
+      transition: transform 1s; /*width 2s, height 2s, 
+      transition-timing-function: ease-out;*/
+      transform: translate(-50%, -50%);
+    }
+    
+    section#welcome button:hover {
+        transform: translate(-50%, -50%) scale(1.2) rotate(360deg);
+        /* width: 240px;
+        height: 240px; */
+    }
